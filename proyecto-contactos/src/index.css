@@ -1,0 +1,29 @@
+.contact-card {
+  width: 280px;
+  height: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px;
+  overflow: hidden; /* sirve para recortar el texto excedente */
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el avatar del contacto */
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover; /* Hace crop a la imagen sin deformarla */
+}
+
+/* Variaciones esteticas */
+.version-classic { border-left: 5px solid #007bff; }
+.version-minimalist { background: #f8f9fa; border: none; box-shadow: none; border-bottom: 2px solid #ccc; }
+.version-dark { background: #212529; color: #fff; border: 1px solid #444; }
+.version-playful { background: #fff3cd; border: 2px dashed #ffc107; border-radius: 16px; }
