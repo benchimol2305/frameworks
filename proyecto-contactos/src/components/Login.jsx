@@ -7,11 +7,11 @@ export default function Login({ onLoginSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Credenciales de prueba fijas
+    // Credenciales 
     if (username === 'admin' && password === '1234') {
       onLoginSuccess();
     } else {
-      setError('Credenciales incorrectas. Intenta con admin / 1234');
+      setError('Credenciales incorrectas. Intenta con admin  1234');
     }
 };
 

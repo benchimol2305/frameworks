@@ -16,8 +16,8 @@ export default function App() {
         <Login onLoginSuccess={handleLoginSuccess} />
       ) : (
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
-          <h1>¡Bienvenido al sistema de contactos!</h1>
-          <p>Has iniciado sesion correctamente con credenciales validas.</p>
+          <h1>Hola</h1>
+          <p>se inicio bien.</p>
           <button onClick={() => setIsAuthenticated(false)}>Cerrar sesionn</button>
         </div>
       )}
