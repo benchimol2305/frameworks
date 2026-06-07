@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 export default function Login({ onLoginSuccess }) {
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false); // Controla si estamos en modo de registro o inicio de sesión
+  const [username, setUsername] = useState(''); 
+  const [password, setPassword] = useState('');// Para mostrar mensajes de error o exito
+  const [errorMessage, setErrorMessage] = useState(''); 
+  const [successMessage, setSuccessMessage] = useState(''); 
 
   // Si no se rellena, dejamos al 'admin' por defecto.
   const [registeredUsers, setRegisteredUsers] = useState(() => {
-    const savedUsers = localStorage.getItem('usuarios_agenda');
+    const savedUsers = localStorage.getItem('usuarios_agenda');  // se cargan los usuarios desde el localStorage
     return savedUsers ? JSON.parse(savedUsers) : [{ user: 'admin', pass: '1234' }];
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // Maneja tanto el registro como el inicio de sesion
     e.preventDefault();
     setErrorMessage('');
     setSuccessMessage('');
@@ -28,7 +28,7 @@ export default function Login({ onLoginSuccess }) {
         
         // Guardamos la nueva lista en el estado y la respaldamos en localStorage
         setRegisteredUsers(updatedUsers);
-        localStorage.setItem('usuarios_agenda', JSON.stringify(updatedUsers));
+        localStorage.setItem('usuarios_agenda', JSON.stringify(updatedUsers)); // Respaldo en localStorage para persistencia
         
         setSuccessMessage('¡Registro exitoso! Ya puedes iniciar sesion.');
         setIsRegistering(false);
@@ -45,7 +45,7 @@ export default function Login({ onLoginSuccess }) {
     }
   };
 
-  const toggleMode = () => {
+  const toggleMode = () => { // Cambia entre modo de registro e inicio de sesion
     setIsRegistering(!isRegistering);
     setErrorMessage('');
     setSuccessMessage('');
@@ -82,7 +82,7 @@ export default function Login({ onLoginSuccess }) {
           {isRegistering ? '¿Ya tienes una cuenta?' : '¿No tienes una cuenta aún?'}
         </p>
         <button onClick={toggleMode} style={{ background: 'none', border: 'none', color: '#007bff', fontWeight: 'bold', cursor: 'pointer', padding: '5px', marginTop: '5px', textDecoration: 'underline' }}>
-          {isRegistering ? 'iniciari sesion' : 'Registro aqui'}
+          {isRegistering ? 'Iniciar sesion' : 'Registrarse aquí'}
         </button>
       </div>
     </div>

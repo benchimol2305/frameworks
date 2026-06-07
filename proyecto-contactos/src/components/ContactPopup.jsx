@@ -1,14 +1,14 @@
 import React from 'react';
 
 export default function ContactPopup({ contact, onClose }) {
-  if (!contact) return null; // Si no hay seleccionado, no dibuja nada en pantalla
+  if (!contact) return null; // Si no hay seleccionado, no muestra nada en pantalla
 
-  const fotoPredeterminada = "https://i.imgur.com/8NfVb37.png";
+  const fotoPredeterminada = "https://imgur.com/gallery/pls-vote-favorite-1QZvg8J#V17y7Xw";
 
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <h3 style={{ margin: '0 0 10px 0', color: '#007bff' }}>Información Detallada</h3>
+        <h3 style={{ margin: '0 0 10px 0', color: '#007bff' }}>Informacion Detallada</h3>
         <hr style={{ border: '0', borderTop: '1px solid #eee' }} />
         
         <div style={{ textAlign: 'center', margin: '15px 0' }}>
